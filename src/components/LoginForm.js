@@ -11,15 +11,14 @@ class LoginForm extends React.Component {
   }
 
   updateState = event => {
-    this.setState(previousState => {
-      let e = event
-      return { [e.target.name]: e.target.value}
+    this.setState({
+      [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = event => {
-    let e = event
-    e.preventDefault()
+    // let e = event
+    event.preventDefault()
     this.state.username && this.state.password ? this.props.handleLogin() : null
   }
 
